@@ -1,0 +1,23 @@
+﻿@model ListofSupermarketsAdminVM
+
+@{
+    Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
+}
+
+    <div class="row clearfix" style="background-color:#051d36">
+
+        @foreach (var supermarket in Model.Supermarkets)
+        {
+            <div class="col-lg-3 col-sm-6 col-md-3">
+                <a href="productpage.html">
+                    <div class="box-img">
+                        <h4>@supermarket.Name</h4>
+                        <img alt="" src="@supermarket.Base64String" />
+                    </div>
+                </a>
+            </div>
+        }
+
+       
+
+    </div>

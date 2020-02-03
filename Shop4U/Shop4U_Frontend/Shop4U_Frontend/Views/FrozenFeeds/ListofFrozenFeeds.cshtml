@@ -1,0 +1,23 @@
+﻿@model ListofFrozenFeedsVM
+
+@{
+    Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
+}
+
+<div class="row clearfix">
+
+    @foreach (var supermarket in Model.ListofFrozenFeeds)
+    {
+        <div class="col-lg-3 col-sm-6 col-md-3">
+            <a href="productpage.html">
+                <div class="box-img">
+                    <h4>@supermarket</h4>
+                    <img src="images/product/1.png" alt="" />
+                </div>
+            </a>
+        </div>
+    }
+
+
+
+</div>
