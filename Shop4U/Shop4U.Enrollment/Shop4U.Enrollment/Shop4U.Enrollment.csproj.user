@@ -14,5 +14,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextTypeFullName>Shop4U.Enrollment.Models.EnrollmentDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>Shop4UEnrollment - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

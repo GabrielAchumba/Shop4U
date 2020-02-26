@@ -8528,11 +8528,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\Shop4U.Supermarkets.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\Shop4U.Supermarkets.csproj",
       "projectName": "Shop4U.Supermarkets",
-      "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\Shop4U.Supermarkets.csproj",
+      "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\Shop4U.Supermarkets.csproj",
       "packagesPath": "C:\\Users\\Gabriel Achumba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Supermarkets\\Shop4U.Supermarkets\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

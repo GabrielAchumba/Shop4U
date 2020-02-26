@@ -12,7 +12,7 @@ namespace Shop4U.Supermarkets.Repositories
         private readonly SupermarketDbContext context;
         public async Task<Item> Add(Item item)
         {
-            if (item.Id == null) item.Id = Guid.NewGuid();
+           
             await context.Items.AddAsync(item);
             await context.SaveChangesAsync();
             return item;

@@ -13,7 +13,7 @@ namespace Shop4U.Supermarkets.Repositories
 
         public async Task<ItemGroup> Add(ItemGroup itemGroup)
         {
-            if (itemGroup.Id == null) itemGroup.Id = Guid.NewGuid();
+            
             await context.ItemGroups.AddAsync(itemGroup);
             await context.SaveChangesAsync();
             return itemGroup;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 
 namespace Shop4U_Frontend
@@ -27,7 +29,12 @@ namespace Shop4U_Frontend
                 options.AutomaticAuthentication = false;
             });
 
+            services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(
+               Directory.GetCurrentDirectory(), "wwwroot")));
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
+
+           
         }
 
         public IConfiguration Configuration { get; }
@@ -48,6 +55,7 @@ namespace Shop4U_Frontend
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Login}/{action=UserLogin}/{id?}");
+                //routes.MapRoute("default", "{controller=Login}/{action=index}/{id?}");
             });
         }
     }

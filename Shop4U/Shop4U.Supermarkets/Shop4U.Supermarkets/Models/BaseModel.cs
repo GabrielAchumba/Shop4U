@@ -7,6 +7,10 @@ namespace Shop4U.Supermarkets.Models
 {
     public class BaseModel
     {
+        public BaseModel()
+        {
+            Id = Guid.NewGuid();
+        }
         public Guid Id { get; set; }
         public string Name { get; set; }
 

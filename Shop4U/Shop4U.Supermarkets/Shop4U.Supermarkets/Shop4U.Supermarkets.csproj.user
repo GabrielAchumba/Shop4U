@@ -10,5 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>Shop4U.Supermarkets.Models.SupermarketDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>Shop4USupermarkets - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

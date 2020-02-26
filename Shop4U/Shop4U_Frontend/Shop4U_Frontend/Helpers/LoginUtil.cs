@@ -15,12 +15,8 @@ namespace Shop4U_Frontend.Helpers
         public LoginUtil()
         {
 
-            baseUrl = "https://localhost:44374/";
-            client = new HttpClient();
-            client.BaseAddress = new System.Uri(baseUrl);
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            StoreId storeId = new StoreId();
+            client = storeId.clientEnrollment;
         }
 
         HttpClient client;

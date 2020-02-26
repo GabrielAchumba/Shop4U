@@ -31,14 +31,14 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ItemCartegoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ItemCartegoryName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ItemGroupId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ItemGroupName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ItemTypeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ItemTypeName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +91,41 @@ namespace Shop4U.Supermarkets.Migrations
                     b.ToTable("ItemGroups");
                 });
 
+            modelBuilder.Entity("Shop4U.Supermarkets.Models.ItemPrice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("BackgrounndPicture")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("CostPrice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MarketGroup")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("MarketId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MarketName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ItemPrices");
+                });
+
             modelBuilder.Entity("Shop4U.Supermarkets.Models.ItemType", b =>
                 {
                     b.Property<Guid>("Id")
@@ -133,55 +168,55 @@ namespace Shop4U.Supermarkets.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4c014f70-28be-47c9-822e-41440df52587"),
+                            Id = new Guid("e9d8c926-1421-4b4b-8c8a-add641f9e13f"),
                             Description = "",
                             Name = "Shoprite"
                         },
                         new
                         {
-                            Id = new Guid("a6839118-7bea-4a06-beae-02296c1fe3d8"),
+                            Id = new Guid("6d73fcf8-794c-4117-9dd2-ab4a668221c1"),
                             Description = "",
                             Name = "Justrite"
                         },
                         new
                         {
-                            Id = new Guid("ae7852a0-ff22-47f6-9600-48d916fdb033"),
+                            Id = new Guid("4a0852da-ca41-4387-827c-20f30cbfa5be"),
                             Description = "",
                             Name = "Welcome U"
                         },
                         new
                         {
-                            Id = new Guid("90c39ddf-06a9-42ba-8f72-f1cd828d40f1"),
+                            Id = new Guid("75abef9c-cf02-4227-bc5b-6b7f7ba7a3d0"),
                             Description = "",
                             Name = "Livinchin"
                         },
                         new
                         {
-                            Id = new Guid("a3d41ead-a606-4cf3-b5a5-ad1da5ed0dce"),
+                            Id = new Guid("3e3ece94-30dc-480f-9fd8-7e50b5587719"),
                             Description = "",
                             Name = "Spar Mall"
                         },
                         new
                         {
-                            Id = new Guid("c45ee5ff-14a7-43db-aedc-6d39afabac2e"),
+                            Id = new Guid("19f4bdea-a7f6-4803-8f7d-de95da49fb8d"),
                             Description = "",
                             Name = "Next Cash And Carry"
                         },
                         new
                         {
-                            Id = new Guid("07a19635-521c-4eff-a343-06f230675b4b"),
+                            Id = new Guid("7342bfed-e656-4f76-8c57-89d6ae42d6e5"),
                             Description = "",
                             Name = "Everyday"
                         },
                         new
                         {
-                            Id = new Guid("e8c07b11-45c4-4cee-8e32-f22c9e5ad351"),
+                            Id = new Guid("ab39862b-6bb0-4280-9f45-e9e21777fcc5"),
                             Description = "",
                             Name = "Market Square"
                         },
                         new
                         {
-                            Id = new Guid("46e8b142-db06-4343-9eae-6783cb0676d4"),
+                            Id = new Guid("c996e182-f008-4696-ba12-b2406fec308d"),
                             Description = "",
                             Name = "PEP Store"
                         });

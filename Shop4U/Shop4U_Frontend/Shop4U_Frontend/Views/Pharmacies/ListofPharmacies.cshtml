@@ -4,20 +4,23 @@
     Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
 }
 
-<div class="row clearfix">
+<section class="content">
 
-    @foreach (var pharmacy in Model.Listofpharmacy)
-    {
-        <div class="col-lg-3 col-sm-6 col-md-3">
-            <a href="productpage.html">
-                <div class="box-img">
-                    <h4>@pharmacy</h4>
-                    <img src="images/product/1.png" alt="" />
-                </div>
-            </a>
-        </div>
-    }
+    <div class="row clearfix">
+
+        @foreach (var pharmacy in Model.Listofpharmacy)
+        {
+            <div class="col-lg-3 col-sm-6 col-md-3">
+                <a href="productpage.html">
+                    <div class="box-img">
+                        <h4>@pharmacy</h4>
+                        <img src="images/product/1.png" alt="" />
+                    </div>
+                </a>
+            </div>
+        }
 
 
 
-</div>
+    </div>
+    </section>

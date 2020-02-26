@@ -1,0 +1,80 @@
+﻿@model UpdatePriceVM
+
+@{
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Update Price</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    
+                    <form role="form" method="post" action="/Items/UpdatePrice">
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label for="MarketGroup">Market Group</label>
+                                <input type="text" class="form-control" id="MarketGroup"
+                                       value="@Model.MarketGroup" name="MarketGroup">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="MarketName">Market Name</label>
+                                <input type="text" class="form-control" id="MarketName"
+                                       value="@Model.MarketName" name="MarketName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ItemName">Item Name</label>
+                                <input type="text" class="form-control" id="ItemName"
+                                       value="@Model.ItemName" name="ItemName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="MarketName">Cost Price</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">N</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="CostPrice"
+                                           value="@Model.CostPrice" name="CostPrice"
+                                           onkeypress="return CheckNumeric();" onkeyup="FormatCurrency(this);">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="ItemPriceId"
+                                       value="@Model.ItemPriceId" name="ItemPriceId" hidden>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="ItemId"
+                                       value="@Model.ItemId" name="ItemId" hidden>
+                            </div>
+
+
+
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Update Price</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>

@@ -9,40 +9,62 @@
     ViewBag.Title = Model.PageTitle;
 }
 
-<nav class="navbar navbar-dark bg-dark">
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <form method="get" action="/Supermarkets/CreateSupermarket" class="form-inline">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Create Supermarket</button>
-    </form>
-</nav>
 
-<h3 class="text-center text-info">SUPERMARKETS</h3>
-<table class="table table-dark">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <a href="/Supermarkets/CreateSupermarket" class="btn btn-primary">Create Supermarket</a>
+    </div><!-- /.container-fluid -->
+</section>
 
-    <thead>
-        <tr>
-            <th scope="col">SN</th>
-            <th scope="col">Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (int i = 1; i <= Model.Supermarkets.Count; i++)
-        {
-            <tr>
-                <th scope="row">@i</th>
-                <td>@Model.Supermarkets[i - 1].Name</td>
-                <td>
-                    <a href="/Supermarkets/DeleteSupermarket/@Model.Supermarkets[i - 1].Id" class="btn btn-info">Delete</a>
-                </td>
-                <td>
-                    <a href="/Supermarkets/EditSupermarket/@Model.Supermarkets[i - 1].Id" class="btn btn-info">Modify</a>
-                </td>
-            </tr>
-        }
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">SUPERMARKETS</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-    </tbody>
-</table>
+                            @for (int i = 1; i <= Model.Supermarkets.Count; i++)
+                            {
+                                <tr>
+                                    <th scope="row">@i</th>
+                                    <td>@Model.Supermarkets[i - 1].Name</td>
+                                    <td>
+                                        <a href="/Supermarkets/DeleteSupermarket/@Model.Supermarkets[i - 1].Id" class="btn btn-info">Delete</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Supermarkets/EditSupermarket/@Model.Supermarkets[i - 1].Id" class="btn btn-info">Update</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        @*<tfoot>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Item Name</th>
+                                    <th>Price (NGN)</th>
+                                </tr>
+                            </tfoot>*@
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
 

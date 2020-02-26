@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj": {}
+    "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj": {
+    "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj",
         "projectName": "Shop4U_Frontend",
-        "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj",
+        "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\Shop4U_Frontend.csproj",
         "packagesPath": "C:\\Users\\Gabriel Achumba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\obj\\",
+        "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U_Frontend\\Shop4U_Frontend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -1,10 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 using Shop4U_Frontend.DTOs;
 using Shop4U_Frontend.Helpers;
+using Shop4U_Frontend.Models;
 using Shop4U_Frontend.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Shop4U_Frontend.Controllers
@@ -12,8 +18,12 @@ namespace Shop4U_Frontend.Controllers
     public class LoginController: Controller
     {
         private readonly LoginUtil loginUtil;
-        public LoginController()
+        private readonly IFileProvider _fileProvider;
+        private readonly IHostingEnvironment _hostingEnvironment;
+        public LoginController(IFileProvider fileProvider, IHostingEnvironment hostingEnvironment)
         {
+            _hostingEnvironment = hostingEnvironment;
+            _fileProvider = fileProvider;
             loginUtil = new LoginUtil();
         }
 
@@ -21,6 +31,7 @@ namespace Shop4U_Frontend.Controllers
         [HttpGet]
         public ViewResult UserLogin()
         {
+            
             return View();
         }
 
@@ -60,6 +71,16 @@ namespace Shop4U_Frontend.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ViewResult index()
+        {
+            return View();
+        }
+
+       
+
+       
 
     }
 }

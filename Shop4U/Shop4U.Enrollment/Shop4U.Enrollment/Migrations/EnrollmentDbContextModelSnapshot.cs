@@ -15,7 +15,7 @@ namespace Shop4U.Enrollment.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -166,7 +166,7 @@ namespace Shop4U.Enrollment.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("73dee47b-9c02-4d5f-b0f1-2c2056efb1e5"),
+                            Id = new Guid("ee19a666-f615-475b-8d6d-bbec211c376a"),
                             FirstName = "SuperAdmin1",
                             LastName = "SuperAdmin1",
                             Password = "superadmin1",

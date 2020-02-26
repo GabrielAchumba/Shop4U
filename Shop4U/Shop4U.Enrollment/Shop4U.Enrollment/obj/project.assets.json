@@ -8528,11 +8528,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\Shop4U.Enrollment.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\Shop4U.Enrollment.csproj",
       "projectName": "Shop4U.Enrollment",
-      "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\Shop4U.Enrollment.csproj",
+      "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\Shop4U.Enrollment.csproj",
       "packagesPath": "C:\\Users\\Gabriel Achumba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\Shop4USoft\\Shop4U\\Shop4U\\Shop4U\\Shop4U.Enrollment\\Shop4U.Enrollment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
