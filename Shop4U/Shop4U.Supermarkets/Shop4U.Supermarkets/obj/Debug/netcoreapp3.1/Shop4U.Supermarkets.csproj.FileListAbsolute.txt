@@ -283,3 +283,4 @@ C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Superm
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Supermarkets\Shop4U.Supermarkets\obj\Debug\netcoreapp3.1\Shop4U.Supermarkets.csproj.CopyComplete
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Supermarkets\Shop4U.Supermarkets\obj\Debug\netcoreapp3.1\Shop4U.Supermarkets.dll
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Supermarkets\Shop4U.Supermarkets\obj\Debug\netcoreapp3.1\Shop4U.Supermarkets.pdb
+C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Supermarkets\Shop4U.Supermarkets\obj\Debug\netcoreapp3.1\Shop4U.Supermarkets.csprojAssemblyReference.cache

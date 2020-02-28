@@ -26,7 +26,14 @@ namespace Shop4U_Frontend.Helpers
             var response = await client.PostAsJsonAsync(requestUri, itemPrice);
 
             if (response.IsSuccessStatusCode)
+            {
                 itemPrice = await response.Content.ReadAsAsync<ItemPrice>();
+            }
+            else
+            {
+                itemPrice = await UpdateItemPrice(itemPrice, itemPrice.Id);
+            }
+                
 
         }
 
@@ -75,6 +82,22 @@ namespace Shop4U_Frontend.Helpers
 
 
             return result;
+
+
+        }
+
+        public async Task<ItemPrice> DeletItemPrice(Guid Id)
+        {
+
+
+            string requestUri = $"api/ItemPrices/{Id}";
+            var response = await client.DeleteAsync(requestUri);
+            ItemPrice itemPrice = new ItemPrice();
+            if (response.IsSuccessStatusCode)
+                itemPrice = await response.Content.ReadAsAsync<ItemPrice>();
+
+
+            return itemPrice;
 
 
         }

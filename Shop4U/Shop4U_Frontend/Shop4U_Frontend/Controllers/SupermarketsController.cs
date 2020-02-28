@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shop4U_Frontend.Helpers;
 using Shop4U_Frontend.Models;
+using Shop4U_Frontend.ViewModels;
 using Shop4U_Frontend.ViewModels.Supermarkets;
 using System;
 using System.Collections.Generic;
@@ -14,17 +15,22 @@ namespace Shop4U_Frontend.Controllers
 {
     public class SupermarketsController: Controller
     {
-        private readonly ListofSupermarketsVM listofSupermarketsVM;
+        private ItemPriceUtil itemPriceUtil;
+        private  ListofSupermarketsVM listofSupermarketsVM;
         private  ListofSupermarketsAdminVM listofSupermarketsAdminVM;
         private  CreateSupermarketVM CreateSupermarketVM;
         private readonly SupermarketsUtil SupermarketsUtil;
         private readonly IHostingEnvironment hostingEnvironment;
+        private SupermarketCartUtil supermarketCartUtil;
+        private AddToCartVM addToCartVM;
         public SupermarketsController(IHostingEnvironment _hostingEnvironment)
         {
             hostingEnvironment = _hostingEnvironment;
-            listofSupermarketsVM = new ListofSupermarketsVM();
             SupermarketsUtil = new SupermarketsUtil();
             CreateSupermarketVM = new CreateSupermarketVM();
+            itemPriceUtil = new ItemPriceUtil();
+            supermarketCartUtil = new SupermarketCartUtil();
+            addToCartVM = new AddToCartVM();
         }
 
         [HttpGet]
@@ -32,8 +38,8 @@ namespace Shop4U_Frontend.Controllers
         {
 
             IEnumerable<Supermarket> supermarkets = await SupermarketsUtil.GetSupermarketsAdim();
-            listofSupermarketsAdminVM = new ListofSupermarketsAdminVM(supermarkets);
-            return View(listofSupermarketsAdminVM);
+            listofSupermarketsVM = new ListofSupermarketsVM(supermarkets);
+            return View(listofSupermarketsVM);
         }
 
         [HttpGet]
@@ -129,6 +135,81 @@ namespace Shop4U_Frontend.Controllers
 
             return RedirectToAction("ListofSupermarketsAdmin");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EnterSupermarket(Guid Id)
+        {
+            Supermarket supermarket = await SupermarketsUtil.GetSupermarketAdmin(Id);
+            IEnumerable<ItemPrice> itemPrices = await itemPriceUtil.GetItemPricesAdim();
+            EnterSupermarketVM enterSupermarketVM = new EnterSupermarketVM();
+            enterSupermarketVM.CreateViewModel(supermarket, itemPrices.ToList());
+
+            return View(enterSupermarketVM);
+        }
+
+        
+        public async Task<IActionResult> AddToCart(Guid Id, string Others)
+        {
+            var splittedChars = Others.Split("?");
+            string MarketName = splittedChars[0];
+            string CostPrice = splittedChars[1];
+            string ItemName = splittedChars[2];
+            SupermarketCart supermarketCart = new SupermarketCart()
+            {
+                MarketName = MarketName,
+                CostPrice = CostPrice,
+                ItemName = ItemName,
+                Day=DateTime.Now.Day,
+                Month=DateTime.Now.Month,
+                Year=DateTime.Now.Year,
+                IsPaid=false,
+                PhoneNumber="07032488605",
+                CustomerId= StoreId.ActiveUser_Id
+            };
+
+            await supermarketCartUtil.CreateSupermarketCart(supermarketCart);
+            var supermarketcarts = await supermarketCartUtil.GetSupermarketCarts();
+            addToCartVM.CreateSupermarketcarts(supermarketCart, supermarketcarts.ToList());
+
+            return View(addToCartVM);
+        }
+
+        public async Task<IActionResult> RefreshOrders(Guid Id, string Others)
+        {
+            var splittedChars = Others.Split("?");
+            string MarketName = splittedChars[0];
+            string CostPrice = splittedChars[1];
+            string ItemName = splittedChars[2];
+            SupermarketCart supermarketCart = new SupermarketCart()
+            {
+                MarketName = MarketName,
+                CostPrice = CostPrice,
+                ItemName = ItemName,
+                Day = DateTime.Now.Day,
+                Month = DateTime.Now.Month,
+                Year = DateTime.Now.Year,
+                IsPaid = false,
+                PhoneNumber = "07032488605",
+                CustomerId = StoreId.ActiveUser_Id
+            };
+
+            var supermarketcarts = await supermarketCartUtil.GetSupermarketCarts();
+            addToCartVM.CreateSupermarketcarts(supermarketCart, supermarketcarts.ToList());
+
+            return View(addToCartVM);
+        }
+
+        public async Task<IActionResult> DeleteOrder(Guid Id)
+        {
+            SupermarketCart supermarketCart = await supermarketCartUtil.GetSupermarketCart(Id);
+            string others = supermarketCart.MarketName + "?" +
+                supermarketCart.CostPrice + "?" + supermarketCart.ItemName;
+
+            var result = await supermarketCartUtil.DeleteSupermarketCart(Id);
+            
+            return RedirectToAction("RefreshOrders", new { Id = Guid.NewGuid(), Others = others });
+        }
+
         private byte[] ConvertToBytes(IFormFile image)
         {
             byte[] CoverImageBytes = null;

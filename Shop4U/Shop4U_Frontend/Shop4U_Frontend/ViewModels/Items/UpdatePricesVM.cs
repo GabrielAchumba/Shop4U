@@ -37,8 +37,11 @@ namespace Shop4U_Frontend.ViewModels
 
             for (int i = 0; i < itemPrices.Count; i++)
             {
-                if (this.MarketGroup == itemPrices[i].MarketGroup)
+                if (this.MarketGroup == itemPrices[i].MarketGroup
+                    && ItemId == itemPrices[i].ItemId)
                 {
+                    itemPrices[i].Base64String = Base64String;
+                    itemPrices[i].Name = this.ItemName;
                     ItemPriceList.Add(itemPrices[i]);
                 }
 

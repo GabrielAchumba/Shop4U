@@ -283,3 +283,4 @@ C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Enroll
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Enrollment\Shop4U.Enrollment\obj\Debug\netcoreapp3.1\Shop4U.Enrollment.csproj.CopyComplete
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Enrollment\Shop4U.Enrollment\obj\Debug\netcoreapp3.1\Shop4U.Enrollment.dll
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Enrollment\Shop4U.Enrollment\obj\Debug\netcoreapp3.1\Shop4U.Enrollment.pdb
+C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U.Enrollment\Shop4U.Enrollment\obj\Debug\netcoreapp3.1\Shop4U.Enrollment.csprojAssemblyReference.cache

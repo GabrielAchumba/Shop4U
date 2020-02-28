@@ -1,0 +1,90 @@
+﻿@model EnterSupermarketVM
+
+@{
+    Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
+}
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1>SHOPPING</h1>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List of Items in @Model.SupermarketName</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                @*<th>S/N</th>*@
+                                <th>Item Detail</th>
+                                @*<th>Price (NGN)</th>
+                                    <th>Add</th>
+                                    <th>Update</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (int i = 1; i <= Model.ItemPrices.Count; i++)
+                            {
+                                <tr>
+                                   
+
+                                    <td>
+                                        <!-- /.col -->
+                                        <div class="col-md-12">
+                                            <div class="card card-success">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">@Model.ItemPrices[i - 1].Name.ToUpper()</h3>
+                                                    <!-- /.card-tools -->
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body">
+                                                    <img class="card-img-top" src="@Model.ItemPrices[i - 1].Base64String" alt="@Model.ItemPrices[i - 1].Name"
+                                                         style="width:200px;height:200px; " />
+                                                    <h4>NGN @Model.ItemPrices[i - 1].CostPrice</h4>
+
+                                                    <a href="/Supermarkets/AddToCart/@Model.ItemPrices[i - 1].Id?Others=@Model.ItemPrices[i - 1].MarketName?@Model.ItemPrices[i - 1].CostPrice?@Model.ItemPrices[i - 1].Name"
+                                                       class="btn btn-info">Add To Cart</a>
+
+                                                    
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </td>
+
+
+                                </tr>
+                            }
+                        </tbody>
+                        @*<tfoot>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Item Name</th>
+                                    <th>Price (NGN)</th>
+                                </tr>
+                            </tfoot>*@
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

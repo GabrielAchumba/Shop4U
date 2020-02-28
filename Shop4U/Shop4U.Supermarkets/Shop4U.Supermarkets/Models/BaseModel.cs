@@ -17,5 +17,7 @@ namespace Shop4U.Supermarkets.Models
         public byte[] BackgrounndPicture { get; set; }
 
         public string Description { get; set; }
+
+        public string Base64String { get; set; }
     }
 }

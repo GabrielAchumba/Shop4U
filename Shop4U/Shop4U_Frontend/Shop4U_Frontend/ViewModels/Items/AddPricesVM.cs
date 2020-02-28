@@ -26,7 +26,8 @@ namespace Shop4U_Frontend.ViewModels
 
         public string Base64String { get; set; }
 
-        public void CreateSupermarketItemPriceList(List<Supermarket> markets,Guid ItemId,Item item)
+        public void CreateSupermarketItemPriceList(List<Supermarket> markets, Guid ItemId, Item item,
+                                            List<ItemPrice> ItemPriceListSaved)
         {
             if (markets.Count <= 0) return;
             this.ItemId = ItemId;
@@ -37,21 +38,35 @@ namespace Shop4U_Frontend.ViewModels
 
             ItemPriceList = new List<ItemPrice>();
 
-           
-                for (int i = 0; i < markets.Count; i++)
+
+            for (int i = 0; i < markets.Count; i++)
+            {
+                ItemPriceList.Add(new ItemPrice());
+                for (int j = 0; j < ItemPriceListSaved.Count; j++)
                 {
-
-                    ItemPriceList.Add(new ItemPrice()
+                    if (markets[i].Name == ItemPriceListSaved[j].MarketName)
                     {
-                        Name= item.Name,
-                        MarketId= markets[i].Id,
-                        ItemId= ItemId,
-                        MarketName= markets[i].Name,
-                        MarketGroup = "Supermarkets"
-                    });
-
+                        ItemPriceList[i] = ItemPriceListSaved[j];
+                        break;
+                    }
                 }
-           
+            }
+
+
+
+            for (int i = 0; i < markets.Count; i++)
+            {
+
+                ItemPriceList[i].Name = item.Name;
+                ItemPriceList[i].MarketId = markets[i].Id;
+                ItemPriceList[i].ItemId = ItemId;
+                ItemPriceList[i].MarketName = markets[i].Name;
+                ItemPriceList[i].MarketGroup = "Supermarkets";
+                ItemPriceList[i].Base64String = Base64String;
+
+
+            }
+
         }
     }
 }

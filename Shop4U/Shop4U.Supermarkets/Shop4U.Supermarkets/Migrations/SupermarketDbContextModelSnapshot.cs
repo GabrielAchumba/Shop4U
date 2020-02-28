@@ -28,6 +28,9 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -60,6 +63,9 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -80,6 +86,9 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -99,6 +108,9 @@ namespace Shop4U.Supermarkets.Migrations
 
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CostPrice")
                         .HasColumnType("nvarchar(max)");
@@ -135,6 +147,9 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -155,6 +170,9 @@ namespace Shop4U.Supermarkets.Migrations
                     b.Property<byte[]>("BackgrounndPicture")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -168,58 +186,111 @@ namespace Shop4U.Supermarkets.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e9d8c926-1421-4b4b-8c8a-add641f9e13f"),
+                            Id = new Guid("becd140f-8731-419e-a0fe-cde99c2ada5b"),
                             Description = "",
                             Name = "Shoprite"
                         },
                         new
                         {
-                            Id = new Guid("6d73fcf8-794c-4117-9dd2-ab4a668221c1"),
+                            Id = new Guid("394291e9-ab8f-47c9-b134-4fbc97f18fbe"),
                             Description = "",
                             Name = "Justrite"
                         },
                         new
                         {
-                            Id = new Guid("4a0852da-ca41-4387-827c-20f30cbfa5be"),
+                            Id = new Guid("b75b01e0-bb24-4369-8cdc-48581ebfd52b"),
                             Description = "",
                             Name = "Welcome U"
                         },
                         new
                         {
-                            Id = new Guid("75abef9c-cf02-4227-bc5b-6b7f7ba7a3d0"),
+                            Id = new Guid("8f1e4822-1607-4642-a520-2f1a02b24bfb"),
                             Description = "",
                             Name = "Livinchin"
                         },
                         new
                         {
-                            Id = new Guid("3e3ece94-30dc-480f-9fd8-7e50b5587719"),
+                            Id = new Guid("69f0c70a-c5a2-4669-87f2-361097a90126"),
                             Description = "",
                             Name = "Spar Mall"
                         },
                         new
                         {
-                            Id = new Guid("19f4bdea-a7f6-4803-8f7d-de95da49fb8d"),
+                            Id = new Guid("d90d012e-866d-4ebb-9499-4283831e6f3e"),
                             Description = "",
                             Name = "Next Cash And Carry"
                         },
                         new
                         {
-                            Id = new Guid("7342bfed-e656-4f76-8c57-89d6ae42d6e5"),
+                            Id = new Guid("bb9f7396-b694-4e82-accd-fb144460f581"),
                             Description = "",
                             Name = "Everyday"
                         },
                         new
                         {
-                            Id = new Guid("ab39862b-6bb0-4280-9f45-e9e21777fcc5"),
+                            Id = new Guid("9fdfa74a-f892-4a18-b65b-7f82495a0da7"),
                             Description = "",
                             Name = "Market Square"
                         },
                         new
                         {
-                            Id = new Guid("c996e182-f008-4696-ba12-b2406fec308d"),
+                            Id = new Guid("b924c652-bc77-4d46-ab85-65f822487588"),
                             Description = "",
                             Name = "PEP Store"
                         });
+                });
+
+            modelBuilder.Entity("Shop4U.Supermarkets.Models.SupermarketCart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("BackgrounndPicture")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Base64String")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CostPrice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Day")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarketName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Month")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Time")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SupermarketCarts");
                 });
 #pragma warning restore 612, 618
         }

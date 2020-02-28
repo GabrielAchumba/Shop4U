@@ -49,7 +49,9 @@ namespace Shop4U_Frontend.Controllers
         {
             if(ModelState.IsValid)
             {
-                model.CreateItems();
+                IEnumerable<Item> itemsSaved = await itemsUtil.GetItemsAdmin();
+
+                model.CreateItems(itemsSaved.ToList());
 
                 for (int i = 0; i < model.models.Count; i++)
                 {
@@ -67,18 +69,25 @@ namespace Shop4U_Frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> AddPrices(Guid Id)
         {
-            
             Item item = await itemsUtil.GetItemAdmin(Id);
-            AddPricesVM model = new AddPricesVM();
-            IEnumerable<Supermarket> supermarkets = await SupermarketsUtil.GetSupermarketsAdim();
-            model.CreateSupermarketItemPriceList(supermarkets.ToList(), Id, item);
+            IEnumerable<ItemPrice> itemPrices = await itemPriceUtil.GetItemPricesAdim();
 
-            for (int i = 0; i < model.ItemPriceList.Count; i++)
+            UpdatePricesVM model = new UpdatePricesVM();
+            model.GetItemPriceListByMarketGroup(itemPrices.ToList(), item, "Supermarkets");
+
+
+           
+            AddPricesVM model2 = new AddPricesVM();
+            IEnumerable<Supermarket> supermarkets = await SupermarketsUtil.GetSupermarketsAdim();
+            
+            model2.CreateSupermarketItemPriceList(supermarkets.ToList(), Id, item, model.ItemPriceList);
+
+            for (int i = 0; i < model2.ItemPriceList.Count; i++)
             {
-                await itemPriceUtil.CreateItemPrice(model.ItemPriceList[i]);
+                await itemPriceUtil.CreateItemPrice(model2.ItemPriceList[i]);
             }
 
-            return View(model);
+            return View(model2);
         }
 
         [HttpGet]
@@ -167,6 +176,41 @@ namespace Shop4U_Frontend.Controllers
         }
 
 
+        public async Task<IActionResult> DeleteItemPrice(Guid Id, string Others)
+        {
+            
+                var splittedChars = Others.Split("?");
+                Guid Item_Id = new Guid(splittedChars[2]);
+                ItemPrice item = await itemPriceUtil.DeletItemPrice(Id);
 
+                return RedirectToAction("UpdatePrices", new { Id = Item_Id });
+           
+        }
+
+        public async Task<IActionResult> DeleteItem(Guid Id)
+        {
+            IEnumerable<ItemPrice> itemprices = await itemPriceUtil.GetItemPricesAdim();
+            List<ItemPrice> itempriceList = itemprices.ToList();
+            List<ItemPrice> itempricesTobeDeleted = new List<ItemPrice>();
+
+            for (int i = 0; i < itempriceList.Count; i++)
+            {
+                if(itempriceList[i].ItemId == Id)
+                {
+                    itempricesTobeDeleted.Add(itempriceList[i]);
+                }
+            }
+
+            for (int i = 0; i < itempricesTobeDeleted.Count; i++)
+            {
+                ItemPrice _itemPrice = await itemPriceUtil.DeletItemPrice(itempricesTobeDeleted[i].Id);
+            }
+
+         
+            Item item = await itemsUtil.DeletItem(Id);
+
+            return RedirectToAction("ItemsTable");
+
+        }
     }
 }

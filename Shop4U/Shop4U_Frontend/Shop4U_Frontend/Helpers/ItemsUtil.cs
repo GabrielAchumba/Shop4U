@@ -53,6 +53,22 @@ namespace Shop4U_Frontend.Helpers
 
         }
 
+        public async Task<Item> DeletItem(Guid Id)
+        {
+
+
+            string requestUri = $"api/Items/{Id}";
+            var response = await client.DeleteAsync(requestUri);
+            Item item = new Item();
+            if (response.IsSuccessStatusCode)
+                item = await response.Content.ReadAsAsync<Item>();
+
+
+            return item;
+
+
+        }
+
         public async Task CreateItem(Item item)
         {
 

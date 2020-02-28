@@ -50,23 +50,30 @@
                                 <th>Market Name</th>
                                 <th>Price (NGN)</th>
                                 <th>Update</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             @for (int i = 1; i <= Model.ItemPriceList.Count; i++)
                             {
-                                <tr>
-                                    <td scope="row">@i</td>
-                                    <td>@Model.ItemPriceList[i - 1].MarketName</td>
-                                    <td>@Model.ItemPriceList[i - 1].CostPrice</td>
-                                    <td>
-                                       
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@Model.ItemPriceList[i - 1].MarketName</td>
+                                <td>@Model.ItemPriceList[i - 1].CostPrice</td>
+                                <td>
 
-                                            <a href="/Items/AddPrice/@Model.ItemPriceList[i - 1].Id?Others=@Model.ItemPriceList[i - 1].MarketName?@Model.MarketGroup?@Model.ItemId"
-                                               class="btn btn-info">Add Price</a>
-                                        </td>
-                                </tr>
+
+                                    <a href="/Items/AddPrice/@Model.ItemPriceList[i - 1].Id?Others=@Model.ItemPriceList[i - 1].MarketName?@Model.MarketGroup?@Model.ItemId"
+                                       class="btn btn-info">Add Price</a>
+                                </td>
+                                <td>
+
+
+                                    <a href="/Items/DeleteItemPrice/@Model.ItemPriceList[i - 1].Id?Others=@Model.ItemPriceList[i - 1].MarketName?@Model.MarketGroup?@Model.ItemId"
+                                       class="btn btn-info">Delete Price</a>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                         @*<tfoot>

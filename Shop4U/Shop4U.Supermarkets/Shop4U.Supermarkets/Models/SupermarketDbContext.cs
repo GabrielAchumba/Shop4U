@@ -26,5 +26,6 @@ namespace Shop4U.Supermarkets.Models
         public DbSet<Supermarket> Supermarkets { get; set; }
 
         public DbSet<ItemPrice> ItemPrices { get; set; }
+        public DbSet<SupermarketCart> SupermarketCarts { get; set; }
     }
 }

@@ -57,6 +57,7 @@ namespace Shop4U.Supermarkets.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -79,10 +80,23 @@ namespace Shop4U.Supermarkets.Controllers
         [HttpPost]
         public async Task<ActionResult<Item>> PostItem(Item item)
         {
-            _context.Items.Add(item);
-            await _context.SaveChangesAsync();
+            Item _item = await _context.Items.FindAsync(item.Id);
 
-            return CreatedAtAction("GetItem", new { id = item.Id }, item);
+            if(_item != null)
+            {
+                var _itemx = _context.Items.Attach(item);
+                _itemx.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetItem", new { id = item.Id }, item);
+            }
+            else
+            {
+                _context.Items.Add(item);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetItem", new { id = item.Id }, item);
+            }
+           
         }
 
         // DELETE: api/Items/5

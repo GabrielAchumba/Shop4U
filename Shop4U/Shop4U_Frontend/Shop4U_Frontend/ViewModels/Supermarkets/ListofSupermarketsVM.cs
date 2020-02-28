@@ -1,4 +1,5 @@
 ﻿using Shop4U_Frontend.Helpers;
+using Shop4U_Frontend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +9,18 @@ namespace Shop4U_Frontend.ViewModels.Supermarkets
 {
     public class ListofSupermarketsVM
     {
-        public ListofSupermarketsVM()
+        public ListofSupermarketsVM(IEnumerable<Supermarket> _Supermarkets)
         {
-            PopulateSupermarkets();
+            PageTitle = "Shop4u | supermarkets";
+            GetSupermarkets(_Supermarkets);
         }
 
-        public List<string> Supermarkets { get; set; }
+        public List<Supermarket> Supermarkets { get; set; }
+        public string PageTitle { get; set; }
 
-        private void PopulateSupermarkets()
+        private void GetSupermarkets(IEnumerable<Supermarket> _Supermarkets)
         {
-            Supermarkets = StaticModels.Supermarkets;
+            Supermarkets = _Supermarkets.ToList();
         }
     }
 }

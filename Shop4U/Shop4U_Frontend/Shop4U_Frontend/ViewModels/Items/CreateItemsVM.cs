@@ -30,11 +30,25 @@ namespace Shop4U_Frontend.ViewModels
         public string ItemCartegoryName { get; set; }
         public string ItemGroupName { get; set; }
 
-        public void CreateItems()
+        public void CreateItems(List<Item> itemsSaved)
         {
             models = new List<Item>();
             string path = TextFile;
             var lines = System.IO.File.ReadAllLines(path);
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var itemdata = ItemsUtil.GetItem(lines[i]);
+                models.Add(new Item());
+                for (int j = 0; j < itemsSaved.Count; j++)
+                {
+                    if(itemdata.Item2 == itemsSaved[j].Name)
+                    {
+                        models[i].Id = itemsSaved[j].Id;
+                        break;
+                    }
+                }
+            }
 
             if (lines.Length == ImageFiles.Count && lines.Length > 0)
             {
@@ -42,18 +56,24 @@ namespace Shop4U_Frontend.ViewModels
                 {
                     byte[] BackgrounndPicture = ItemsUtil.ConvertToBytes(ImageFiles[i]);
                     var itemdata = ItemsUtil.GetItem(lines[i]);
-                    if (itemdata == null) continue;
-                    models.Add(new Item
+
+                    models[i].BackgrounndPicture = BackgrounndPicture;
+                    models[i].ItemCartegoryName = ItemCartegoryName;
+                    models[i].ItemGroupName = ItemGroupName;
+                    models[i].BackgrounndPicture = BackgrounndPicture;
+                    models[i].BackgrounndPicture = BackgrounndPicture;
+
+                    if (itemdata == null)
                     {
-                        Id=Guid.NewGuid(),
-                        Price = itemdata.Item1,
-                        Name = itemdata.Item2,
-                        BackgrounndPicture = BackgrounndPicture,
-                        ItemCartegoryName= ItemCartegoryName,
-                        ItemGroupName= ItemGroupName
-                    });
-
-
+                        models[i].Price = 0;
+                        models[i].Name = "";
+                    }
+                    else
+                    {
+                        models[i].Price = itemdata.Item1;
+                        models[i].Name = itemdata.Item2;
+                    }
+                    
                 }
             }
         }

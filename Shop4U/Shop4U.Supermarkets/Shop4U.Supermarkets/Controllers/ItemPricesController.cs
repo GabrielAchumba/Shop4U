@@ -80,19 +80,15 @@ namespace Shop4U.Supermarkets.Controllers
         public async Task<ActionResult<ItemPrice>> PostItemPrice(ItemPrice itemPrice)
         {
             ItemPrice _itemPriceTemp = await _context.ItemPrices.FindAsync(itemPrice.Id);
-            if (_itemPriceTemp != null)
+            if (_itemPriceTemp == null)
             {
-                var _itemPrice = _context.ItemPrices.Attach(itemPrice);
-                _itemPrice.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.ItemPrices.Add(itemPrice);
                 await _context.SaveChangesAsync();
 
                 return CreatedAtAction("GetItemPrice", new { id = itemPrice.Id }, itemPrice);
             }
 
-              _context.ItemPrices.Add(itemPrice);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetItemPrice", new { id = itemPrice.Id }, itemPrice);
+            return NotFound();
         }
 
         // DELETE: api/ItemPrices/5

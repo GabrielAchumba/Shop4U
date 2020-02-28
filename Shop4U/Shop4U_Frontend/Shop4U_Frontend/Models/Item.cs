@@ -7,6 +7,10 @@ namespace Shop4U_Frontend.Models
 {
     public class Item : BaseModel
     {
+        public Item():base()
+        {
+
+        }
         public string ItemCartegoryName { get; set; }
         public string ItemGroupName { get; set; }
         public string ItemTypeName { get; set; }

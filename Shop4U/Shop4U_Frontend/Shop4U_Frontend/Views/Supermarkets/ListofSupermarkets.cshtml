@@ -1,26 +1,48 @@
-﻿@model ListofSupermarketsAdminVM
+﻿@model ListofSupermarketsVM
 
 @{
     Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
 }
-    <section class="content">
 
-        <div class="row clearfix" style="background-color:#051d36">
 
-            @foreach (var supermarket in Model.Supermarkets)
-            {
-                <div class="col-lg-3 col-sm-6 col-md-3">
-                    <a href="productpage.html">
-                        <div class="box-img">
-                            <h4>@supermarket.Name</h4>
-                            <img alt="" src="@supermarket.Base64String" />
-                        </div>
-                    </a>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">SUPERMARKETS</h3>
                 </div>
-            }
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Shopping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-
-
+                            @for (int i = 1; i <= Model.Supermarkets.Count; i++)
+                            {
+                                <tr>
+                                    <th scope="row">@i</th>
+                                    <td>@Model.Supermarkets[i - 1].Name</td>
+                                    <td>
+                                        <a href="/Supermarkets/EnterSupermarket/@Model.Supermarkets[i - 1].Id" class="btn btn-info">Please Go in</a>
+                                    </td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                     
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
         </div>
-
-    </section>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

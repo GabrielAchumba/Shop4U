@@ -60,3 +60,6 @@ C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Fronte
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Razor\Views\Items\UpdatePrice.cshtml.g.cs
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Razor\Views\Items\UpdatePrices.cshtml.g.cs
 C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Shop4U_Frontend.csprojAssemblyReference.cache
+C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Razor\Views\Supermarkets\EnterSupermarket.cshtml.g.cs
+C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Razor\Views\Supermarkets\AddToCart.cshtml.g.cs
+C:\Users\Gabriel Achumba\Documents\Shop4USoft\Shop4U\Shop4U\Shop4U\Shop4U_Frontend\Shop4U_Frontend\obj\Debug\netcoreapp3.1\Razor\Views\Supermarkets\RefreshOrders.cshtml.g.cs
