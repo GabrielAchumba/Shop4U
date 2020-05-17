@@ -1,0 +1,152 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CenterSpace.NMath/6.2.0.57": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Solver.Foundation": "3.1.0"
+        },
+        "build": {
+          "build/CenterSpace.NMath.targets": {}
+        }
+      },
+      "Microsoft.Solver.Foundation/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Solver.Foundation.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Solver.Foundation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CenterSpace.NMath/6.2.0.57": {
+      "sha512": "ARFUjMei83WKw+BwD1aaHKRUGnJdJ5kDorP8mdSYRJaQugb42hawO0+cE9BV6RhUI61gMhjvWikIC4i0zO/EFg==",
+      "type": "package",
+      "path": "centerspace.nmath/6.2.0.57",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/CenterSpace.NMath.targets",
+        "build/x64/NMathKernelx64.dll",
+        "build/x64/libiomp5md.dll",
+        "build/x64/nmath_native_x64.dll",
+        "build/x64/nmath_sf_x64.dll",
+        "build/x86/NMathKernelx86.dll",
+        "build/x86/libiomp5md.dll",
+        "build/x86/nmath_native_x86.dll",
+        "build/x86/nmath_sf_x86.dll",
+        "centerspace.nmath.6.2.0.57.nupkg.sha512",
+        "centerspace.nmath.nuspec",
+        "lib/net40/NMath.dll",
+        "lib/net40/NMath.xml",
+        "license.txt",
+        "readme.txt",
+        "tools/NMath.dll",
+        "tools/NMath.xml"
+      ]
+    },
+    "Microsoft.Solver.Foundation/3.1.0": {
+      "sha512": "02dYXlaV3Px4zIX7v+K5e7aPsdUqQm/IQ6ZvmcCBH/+FkSciHAdKQoLqEP1zLyWCWBy1Q90j9uIRzXNDEKe9Gg==",
+      "type": "package",
+      "path": "microsoft.solver.foundation/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.Solver.Foundation.dll",
+        "lib/Microsoft.Solver.Foundation.xml",
+        "microsoft.solver.foundation.3.1.0.nupkg.sha512",
+        "microsoft.solver.foundation.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "CenterSpace.NMath >= 6.2.0.57"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Gabriel Achumba\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Gabriel Achumba\\Documents\\SoftwareForecasting\\SoftwareForecasting\\SoftwareForecasting\\ForecastingLibrary\\ForecastingLibrary.csproj",
+      "projectName": "ForecastingLibrary",
+      "projectPath": "C:\\Users\\Gabriel Achumba\\Documents\\SoftwareForecasting\\SoftwareForecasting\\SoftwareForecasting\\ForecastingLibrary\\ForecastingLibrary.csproj",
+      "packagesPath": "C:\\Users\\Gabriel Achumba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel Achumba\\Documents\\SoftwareForecasting\\SoftwareForecasting\\SoftwareForecasting\\ForecastingLibrary\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Gabriel Achumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "CenterSpace.NMath": {
+            "target": "Package",
+            "version": "[6.2.0.57, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Solver.Foundation 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Solver.Foundation",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

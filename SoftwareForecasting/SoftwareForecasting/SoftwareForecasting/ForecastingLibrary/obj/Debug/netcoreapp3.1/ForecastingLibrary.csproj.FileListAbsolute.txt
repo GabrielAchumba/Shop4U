@@ -1,0 +1,8 @@
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\bin\Debug\netcoreapp3.1\ForecastingLibrary.deps.json
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\bin\Debug\netcoreapp3.1\ForecastingLibrary.dll
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\obj\Debug\netcoreapp3.1\ForecastingLibrary.AssemblyInfoInputs.cache
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\obj\Debug\netcoreapp3.1\ForecastingLibrary.AssemblyInfo.cs
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\bin\Debug\netcoreapp3.1\ForecastingLibrary.pdb
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\obj\Debug\netcoreapp3.1\ForecastingLibrary.dll
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\obj\Debug\netcoreapp3.1\ForecastingLibrary.pdb
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\ForecastingLibrary\obj\Debug\netcoreapp3.1\ForecastingLibrary.csprojAssemblyReference.cache

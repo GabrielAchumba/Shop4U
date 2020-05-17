@@ -1,0 +1,24 @@
+﻿  CalculateDeckVariables.cpp
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(35,24): warning C4251: 'DateCreation::dateTimes': class 'std::vector<Date,std::allocator<Date>>' needs to have dll-interface to be used by clients of class 'DateCreation'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(27): message : see declaration of 'std::vector<Date,std::allocator<Date>>'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(36,22): warning C4251: 'DateCreation::daysList': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'DateCreation'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(36): message : see declaration of 'std::vector<int,std::allocator<int>>'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\CalculateDeckVariables.h(28,33): warning C4251: 'CalculateDeckVariables::integration': class 'Integration<double>' needs to have dll-interface to be used by clients of class 'CalculateDeckVariables'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\CalculateDeckVariables.h(28): message : see declaration of 'Integration<double>'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\CalculateDeckVariables.h(80,48): warning C4251: 'CalculateDeckVariables::results': class 'std::vector<std::vector<std::vector<ForecastResult,std::allocator<ForecastResult>>,std::allocator<std::vector<ForecastResult,std::allocator<ForecastResult>>>>,std::allocator<std::vector<std::vector<ForecastResult,std::allocator<ForecastResult>>,std::allocator<std::vector<ForecastResult,std::allocator<ForecastResult>>>>>>' needs to have dll-interface to be used by clients of class 'CalculateDeckVariables'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\CalculateDeckVariables.h(80): message : see declaration of 'std::vector<std::vector<std::vector<ForecastResult,std::allocator<ForecastResult>>,std::allocator<std::vector<ForecastResult,std::allocator<ForecastResult>>>>,std::allocator<std::vector<std::vector<ForecastResult,std::allocator<ForecastResult>>,std::allocator<std::vector<ForecastResult,std::allocator<ForecastResult>>>>>>'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\CalculateDeckVariables.cpp(249,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  DateCreation.cpp
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(35,24): warning C4251: 'DateCreation::dateTimes': class 'std::vector<Date,std::allocator<Date>>' needs to have dll-interface to be used by clients of class 'DateCreation'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(27): message : see declaration of 'std::vector<Date,std::allocator<Date>>'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(36,22): warning C4251: 'DateCreation::daysList': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'DateCreation'
+C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\Forecast\DateCreation.h(36): message : see declaration of 'std::vector<int,std::allocator<int>>'
+  Decline_Curve_Analysis.cpp
+  dllmain.cpp
+  Forecast.cpp
+  FractionalFlow.cpp
+  Inputdeck.cpp
+  Integration.cpp
+  Generating Code...
+     Creating library C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\x64\Debug\Forecast.lib and object C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\x64\Debug\Forecast.exp
+  Forecast.vcxproj -> C:\Users\Gabriel Achumba\Documents\SoftwareForecasting\SoftwareForecasting\SoftwareForecasting\x64\Debug\Forecast.dll

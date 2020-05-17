@@ -23,7 +23,7 @@ const actions = {
     CreateNewCustomer(context)
   {
     return new Promise((resolve, reject) => {
-       $http.post('ItemTickets', context.state.NewCustomer)
+       $http.post('Customers', context.state.NewCustomer)
         .then(response => {
             
           context.commit('CreateNewCustomer', response.data)              
