@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop4U.Supermarkets", "Shop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop4U_Frontend", "Shop4U_Frontend\Shop4U_Frontend\Shop4U_Frontend.csproj", "{DCA20318-3099-466D-B4F1-F54166195263}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop4U.Fastfoods", "Shop4U.Fastfoods\Shop4U.Fastfoods.csproj", "{52AE56C4-5385-4931-A102-5B3E21B12383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop4U.GatewayAPI", "Shop4U.GatewayAPI\Shop4U.GatewayAPI.csproj", "{BB61BA2E-3D14-4367-8CF2-4BAEFC7731CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{DCA20318-3099-466D-B4F1-F54166195263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA20318-3099-466D-B4F1-F54166195263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA20318-3099-466D-B4F1-F54166195263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52AE56C4-5385-4931-A102-5B3E21B12383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52AE56C4-5385-4931-A102-5B3E21B12383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52AE56C4-5385-4931-A102-5B3E21B12383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52AE56C4-5385-4931-A102-5B3E21B12383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB61BA2E-3D14-4367-8CF2-4BAEFC7731CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB61BA2E-3D14-4367-8CF2-4BAEFC7731CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB61BA2E-3D14-4367-8CF2-4BAEFC7731CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB61BA2E-3D14-4367-8CF2-4BAEFC7731CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -108,16 +108,22 @@ namespace Shop4U_Frontend.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPrice(AddPriceVM model)
         {
-            ItemPrice itemPrice = new ItemPrice()
-            {
-                Id = model.ItemPriceId,
-                ItemId = model.ItemId,
-                MarketName = model.MarketName,
-                MarketGroup = model.MarketGroup,
-                CostPrice = model.CostPrice
+            //ItemPrice itemPrice = new ItemPrice()
+            //{
+            //    Id = model.ItemPriceId,
+            //    ItemId = model.ItemId,
+            //    MarketName = model.MarketName,
+            //    MarketGroup = model.MarketGroup,
+            //    CostPrice = model.CostPrice
 
-            };
+            //};
 
+            Item item = await itemsUtil.GetItemAdmin(model.ItemId);
+            ItemPrice itemPrice = await itemPriceUtil.GetItemPriceAdim(model.ItemPriceId);
+            itemPrice.CostPrice = model.CostPrice;
+            itemPrice.Name = item.Name;
+            if (item.BackgrounndPicture != null)
+                itemPrice.Base64String = "data:image/png;base64," + Convert.ToBase64String(item.BackgrounndPicture, 0, item.BackgrounndPicture.Length);
             await itemPriceUtil.UpdateItemPrice(itemPrice, model.ItemPriceId);
             return RedirectToAction("UpdatePrices", new { Id = model.ItemId });
 
@@ -160,16 +166,22 @@ namespace Shop4U_Frontend.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdatePrice(AddPriceVM model)
         {
-            ItemPrice itemPrice = new ItemPrice()
-            {
-                Id = model.ItemPriceId,
-                ItemId = model.ItemId,
-                MarketGroup = model.MarketGroup,
-                MarketName=model.MarketName,
-                CostPrice = model.CostPrice
+            //ItemPrice itemPrice = new ItemPrice()
+            //{
+            //    Id = model.ItemPriceId,
+            //    ItemId = model.ItemId,
+            //    MarketGroup = model.MarketGroup,
+            //    MarketName=model.MarketName,
+            //    CostPrice = model.CostPrice
 
-            };
+            //};
 
+            Item item = await itemsUtil.GetItemAdmin(model.ItemId);
+            ItemPrice itemPrice = await itemPriceUtil.GetItemPriceAdim(model.ItemPriceId);
+            itemPrice.CostPrice = model.CostPrice;
+            itemPrice.Name = item.Name;
+            if (item.BackgrounndPicture != null)
+                itemPrice.Base64String = "data:image/png;base64," + Convert.ToBase64String(item.BackgrounndPicture, 0, item.BackgrounndPicture.Length);
             await itemPriceUtil.UpdateItemPrice(itemPrice, model.ItemPriceId);
             return RedirectToAction("UpdatePrices", new { Id = model.ItemId });
 

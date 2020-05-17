@@ -39,17 +39,17 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="MarketName">Cost Price</label>
+                                <label for="MarketName">Cost Price (NGN)</label>
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    @*<div class="input-group-prepend">
                                         <span class="input-group-text">N</span>
-                                    </div>
+                                    </div>*@
                                     <input type="text" class="form-control" id="CostPrice"
                                            value="@Model.CostPrice" name="CostPrice"
                                            onkeypress="return CheckNumeric();" onkeyup="FormatCurrency(this);">
-                                    <div class="input-group-append">
+                                    @*<div class="input-group-append">
                                         <span class="input-group-text">.00</span>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
 

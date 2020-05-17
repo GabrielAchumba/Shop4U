@@ -23,6 +23,12 @@ namespace Shop4U_Frontend.Helpers
             clientSupermarkets.DefaultRequestHeaders.Clear();
             clientSupermarkets.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+
+            clientFastfoods = new HttpClient();
+            clientFastfoods.BaseAddress = new System.Uri(baseUrlFastfoods);
+            clientFastfoods.DefaultRequestHeaders.Clear();
+            clientFastfoods.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public static bool IsLoggedIn { get; set; }
@@ -35,12 +41,14 @@ namespace Shop4U_Frontend.Helpers
         public static Guid ActiveSupermarket_Id { get; set; }
         public static Guid ActiveItem_Id { get; set; }
 
-        public static  string baseUrlEnrollment = "https://localhost:44374/";
-        public static string baseUrlSupermarkets = "https://localhost:44301/";
+        public static  string baseUrlEnrollment = "http://localhost:55100/";
+        public static string baseUrlSupermarkets = "http://localhost:55102/";
+        public static string baseUrlFastfoods = "http://localhost:55101/";
 
-        
+
         public   HttpClient clientEnrollment { get; set; }
         public HttpClient clientSupermarkets { get; set; }
+        public HttpClient clientFastfoods { get; set; }
     }
 
     public class ObjectClass

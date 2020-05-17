@@ -1,0 +1,94 @@
+﻿@model Shop4U_Frontend.ViewModels.FastfoodItems.AddPricesVM
+
+@{
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <!-- /.col -->
+        <div class="col-md-12">
+            <div class="card card-success">
+                <div class="card-header">
+                    <h3 class="card-title">@Model.ItemName.ToUpper()</h3>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <img class="card-img-top" src="@Model.Base64String" alt="@Model.ItemName"
+                         style="width:200px;height:200px; " />
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ItemPriceId"
+                               value="@Model.ItemId" name="ItemPriceId" hidden>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Price Lists for @Model.MarketGroup</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Market Name</th>
+                                <th>Price (NGN)</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (int i = 1; i <= Model.ItemPriceList.Count; i++)
+                            {
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@Model.ItemPriceList[i - 1].MarketName</td>
+                                <td>@Model.ItemPriceList[i - 1].CostPrice</td>
+                                <td>
+
+
+                                    <a href="/FastfoodItems/AddPrice/@Model.ItemPriceList[i - 1].Id?Others=@Model.ItemPriceList[i - 1].MarketName?@Model.MarketGroup?@Model.ItemId"
+                                       class="btn btn-info">Add Price</a>
+                                </td>
+                                <td>
+
+
+                                    <a href="/FastfoodItems/DeleteItemPrice/@Model.ItemPriceList[i - 1].Id?Others=@Model.ItemPriceList[i - 1].MarketName?@Model.MarketGroup?@Model.ItemId"
+                                       class="btn btn-info">Delete Price</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                        @*<tfoot>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Item Name</th>
+                                    <th>Price (NGN)</th>
+                                </tr>
+                            </tfoot>*@
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

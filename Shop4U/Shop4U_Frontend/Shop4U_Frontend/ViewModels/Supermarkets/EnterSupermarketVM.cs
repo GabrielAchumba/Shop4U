@@ -21,7 +21,10 @@ namespace Shop4U_Frontend.ViewModels
             ItemPrices = new List<ItemPrice>();
             for (int i = 0; i < itemPrices.Count; i++)
             {
-                if(itemPrices[i].MarketName == SupermarketName)
+                if(itemPrices[i].MarketName == SupermarketName
+                    && string.IsNullOrEmpty(itemPrices[i].CostPrice) == false
+                     && string.IsNullOrEmpty(itemPrices[i].Name) == false
+                     && string.IsNullOrEmpty(itemPrices[i].Base64String) == false)
                 {
                     ItemPrices.Add(itemPrices[i]);
                 }

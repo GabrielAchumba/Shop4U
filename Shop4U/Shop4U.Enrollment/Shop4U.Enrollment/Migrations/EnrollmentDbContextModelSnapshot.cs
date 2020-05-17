@@ -48,6 +48,26 @@ namespace Shop4U.Enrollment.Migrations
                     b.ToTable("Administrators");
                 });
 
+            modelBuilder.Entity("Shop4U.Enrollment.Models.Auth", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Auths");
+                });
+
             modelBuilder.Entity("Shop4U.Enrollment.Models.BusinessPersonel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -135,6 +155,102 @@ namespace Shop4U.Enrollment.Migrations
                     b.ToTable("Distributors");
                 });
 
+            modelBuilder.Entity("Shop4U.Enrollment.Models.Good", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("ActualPrice")
+                        .HasColumnType("float");
+
+                    b.Property<Guid>("AdminId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CustomersIds")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DistributionDay")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DistributionMonth")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DistributionYear")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsSold")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ItemCategory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SharedCategory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Goods");
+                });
+
+            modelBuilder.Entity("Shop4U.Enrollment.Models.GoodDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ContentSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("CostPrice")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ItemCategory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Units")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GoodDetails");
+                });
+
+            modelBuilder.Entity("Shop4U.Enrollment.Models.ItemTicket", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Cost")
+                        .HasColumnType("float");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ItemTickets");
+                });
+
             modelBuilder.Entity("Shop4U.Enrollment.Models.SuperAdministrator", b =>
                 {
                     b.Property<Guid>("Id")
@@ -166,7 +282,7 @@ namespace Shop4U.Enrollment.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ee19a666-f615-475b-8d6d-bbec211c376a"),
+                            Id = new Guid("9f075c51-c89e-4dcd-8b84-2f0c98d19c6d"),
                             FirstName = "SuperAdmin1",
                             LastName = "SuperAdmin1",
                             Password = "superadmin1",

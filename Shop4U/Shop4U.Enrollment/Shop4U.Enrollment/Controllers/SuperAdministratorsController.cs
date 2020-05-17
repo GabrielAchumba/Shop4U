@@ -81,15 +81,26 @@ namespace Shop4U.Enrollment.Controllers
         public async Task<ActionResult<SuperAdministrator>> PostSuperAdministrator(SuperAdministrator superAdministrator)
         {
 
-            if (superAdministrator != null)
+
+            bool check = false;
+
+
+            foreach (var item in _context.SuperAdministrators)
             {
-                
-                    if (superAdministrator.Id == null) superAdministrator.Id = Guid.NewGuid();
-                    await _context.SuperAdministrators.AddAsync(superAdministrator);
+                if (item.Id == superAdministrator.Id)
+                {
+                    check = true; break;
+                }
+            }
+
+            if (check == true) superAdministrator.Id = Guid.NewGuid();
+
+
+            await _context.SuperAdministrators.AddAsync(superAdministrator);
                     await _context.SaveChangesAsync();
                     return Ok(superAdministrator);
 
-            }
+            
 
             return Ok(superAdministrator);
         }

@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using Shop4U.Enrollment.Models;
 using Shop4U.Enrollment.Repositories;
 using Shop4U.Enrollment.Services;
+using Microsoft.AspNetCore.Session;
+using Microsoft.OpenApi.Models;
 
 namespace Shop4U.Enrollment
 {
@@ -39,7 +41,31 @@ namespace Shop4U.Enrollment
             //services.AddScoped<IBusinessPersonelRepository, BusinessPersonelRepository>();
             //services.AddScoped<ICustomerRepository, CustomerRepository>();
             //services.AddScoped<IDistributorRepository, DistributorRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder =>
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
+            //services.AddSession();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             services.AddControllers();
+
+            services.AddDistributedMemoryCache();
+
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ShoppingAPI", Version = "v1" });
+            });
 
         }
 
@@ -51,15 +77,26 @@ namespace Shop4U.Enrollment
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSession();
+
+
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShoppingAPI V1");
             });
 
         }

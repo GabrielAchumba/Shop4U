@@ -7,6 +7,5 @@ namespace Shop4U.Enrollment.Models
 {
     public class Customer: BaseModel
     {
-        
     }
 }

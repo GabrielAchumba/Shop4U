@@ -24,5 +24,9 @@ namespace Shop4U.Enrollment.Models
         public DbSet<BusinessPersonel> BusinessPersonels { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Distributor> Distributors { get; set; }
+        public DbSet<Good> Goods { get; set; }
+        public DbSet<ItemTicket> ItemTickets { get; set; }
+        public DbSet<GoodDetail> GoodDetails { get; set; }
+        public DbSet<Auth> Auths { get; set; }
     }
 }

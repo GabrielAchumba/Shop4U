@@ -30,8 +30,12 @@ namespace Shop4U_Frontend.ViewModels
                     && supermarketCart.Year == supermarketcarts[i].Year
                    && supermarketcarts[i].IsPaid == false)
                 {
-                    sum = sum + Convert.ToDouble(supermarketcarts[i].CostPrice);
-                    Supermarketcarts.Add(supermarketcarts[i]);
+                    if(string.IsNullOrEmpty(supermarketcarts[i].CostPrice)== false)
+                    {
+                        sum = sum + Convert.ToDouble(supermarketcarts[i].CostPrice);
+                        Supermarketcarts.Add(supermarketcarts[i]);
+                    }
+                        
                 }
             }
 

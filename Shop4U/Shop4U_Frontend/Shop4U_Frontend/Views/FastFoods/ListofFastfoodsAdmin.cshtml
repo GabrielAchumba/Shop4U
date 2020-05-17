@@ -1,0 +1,64 @@
+﻿@model ListofFastfoodsAdminVM
+
+@{
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = Model.PageTitle;
+}
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <a href="/FastFoods/CreateFastfood" class="btn btn-primary">Create FastFood Restaurant</a>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">FASTFOODS RESTAURANTS</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (int i = 1; i <= Model.Fastfoods.Count; i++)
+                            {
+                                <tr>
+                                    <th scope="row">@i</th>
+                                    <td>@Model.Fastfoods[i - 1].Name</td>
+                                    <td>
+                                        <a href="/FastFoods/DeleteFastfood/@Model.Fastfoods[i - 1].Id" class="btn btn-info">Delete</a>
+                                    </td>
+                                    <td>
+                                        <a href="/FastFoods/EditFastfood/@Model.Fastfoods[i - 1].Id" class="btn btn-info">Update</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+

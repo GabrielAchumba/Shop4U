@@ -80,9 +80,22 @@ namespace Shop4U.Enrollment.Controllers
         [Route("PostCustomer")]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
+            bool check = false;
+
             if (customer != null)
             {
-                if (customer.Id == null) customer.Id = Guid.NewGuid();
+
+                foreach (var item in _context.Customers)
+                {
+                    if (item.Id == customer.Id)
+                    {
+                        check = true; break;
+                    }
+                }
+
+                if (check == true) customer.Id = Guid.NewGuid();
+
+
                 _context.Customers.Add(customer);
                 await _context.SaveChangesAsync();
                 customer.UserType = "User";

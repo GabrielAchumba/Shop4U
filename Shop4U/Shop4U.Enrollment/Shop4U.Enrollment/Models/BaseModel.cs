@@ -9,7 +9,7 @@ namespace Shop4U.Enrollment.Models
     {
         public BaseModel()
         {
-            Id = Guid.NewGuid();
+           // Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
         public string FirstName { get; set; }

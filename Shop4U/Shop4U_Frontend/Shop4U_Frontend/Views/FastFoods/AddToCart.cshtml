@@ -1,0 +1,70 @@
+﻿@model AddToFastfoodCartVM
+
+@{
+    Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
+}
+
+
+}
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <h2>Total Amount: @Model.TotalAmount</h2>
+
+                    <a href="/FastFoods/MakePayment" class="btn btn-info">Make Payment</a>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List of Orders</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Food Name</th>
+                                <th>Price (NGN)</th>
+                                <th>Fastfood Name</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (int i = 1; i <= Model.Fastfoodcarts.Count; i++)
+                            {
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@Model.Fastfoodcarts[i - 1].ItemName</td>
+                                <td>@Model.Fastfoodcarts[i - 1].CostPrice</td>
+                                <td>@Model.Fastfoodcarts[i - 1].MarketName</td>
+                                <td>
+
+
+                                    <a href="/FastFoods/DeleteOrder/@Model.Fastfoodcarts[i - 1].Id"
+                                       class="btn btn-info">Delete Order</a>
+                                </td>
+                                
+                            </tr>
+                            }
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

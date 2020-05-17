@@ -89,11 +89,11 @@ namespace Shop4U_Frontend.Helpers
             return CoverImageBytes;
         }
 
-        public static Tuple<double,string> GetItem(string item)
+        public static string GetItem(string item)
         {
             var chars = item.Split("\t");
-            if (chars.Length < 2) return null;
-            return new Tuple<double, string>(Convert.ToDouble(chars[2]), chars[1]);
+            if (chars.Length < 1) return null;
+            return chars[1];
         }
     }
 }

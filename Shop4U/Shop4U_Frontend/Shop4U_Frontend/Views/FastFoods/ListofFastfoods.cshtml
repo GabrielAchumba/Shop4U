@@ -1,0 +1,48 @@
+﻿@model ListofFastfoodsVM
+
+@{
+    Layout = "~/Views/Shared/_Shop4ULayout1.cshtml";
+}
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">FAST FOODS</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Shopping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (int i = 1; i <= Model.Fastfoods.Count; i++)
+                            {
+                                <tr>
+                                    <th scope="row">@i</th>
+                                    <td>@Model.Fastfoods[i - 1].Name</td>
+                                    <td>
+                                        <a href="/FastFoods/EnterFastfood/@Model.Fastfoods[i - 1].Id" class="btn btn-info">Please Go in</a>
+                                    </td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                     
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

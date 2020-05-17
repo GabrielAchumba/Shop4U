@@ -79,6 +79,17 @@ namespace Shop4U.Enrollment.Controllers
         [HttpPost]
         public async Task<ActionResult<Administrator>> PostAdministrator(Administrator administrator)
         {
+            bool check = false;
+            foreach (var item in _context.Administrators)
+            {
+                if (item.Id == administrator.Id)
+                {
+                    check = true; break;
+                }
+            }
+
+            if (check == true) administrator.Id = Guid.NewGuid();
+
             _context.Administrators.Add(administrator);
             await _context.SaveChangesAsync();
 

@@ -1,0 +1,46 @@
+{
+  "ReRoutes": [
+    // Enrollment Service Route
+    {
+      "DownstreamPathTemplate": "/api/superadministrators/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 55100
+        }
+      ],
+      "UpstreamPathTemplate": "/api/superadministrators/",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    // FastFood Restuarant Service Route
+    {
+      "DownstreamPathTemplate": "/api/Fastfoods/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 55101
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Fastfoods/",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    // Supermarket Service Route
+    {
+      "DownstreamPathTemplate": "/api/supermarkets/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 55102
+        }
+      ],
+      "UpstreamPathTemplate": "/api/supermarkets/",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:55110"
+  }
+}

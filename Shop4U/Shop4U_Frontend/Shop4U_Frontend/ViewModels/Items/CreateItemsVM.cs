@@ -42,7 +42,7 @@ namespace Shop4U_Frontend.ViewModels
                 models.Add(new Item());
                 for (int j = 0; j < itemsSaved.Count; j++)
                 {
-                    if(itemdata.Item2 == itemsSaved[j].Name)
+                    if(itemdata == itemsSaved[j].Name)
                     {
                         models[i].Id = itemsSaved[j].Id;
                         break;
@@ -65,13 +65,11 @@ namespace Shop4U_Frontend.ViewModels
 
                     if (itemdata == null)
                     {
-                        models[i].Price = 0;
                         models[i].Name = "";
                     }
                     else
                     {
-                        models[i].Price = itemdata.Item1;
-                        models[i].Name = itemdata.Item2;
+                        models[i].Name = itemdata;
                     }
                     
                 }
